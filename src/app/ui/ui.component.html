@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <main class="contenedor">
+      <article class="container">
+        <header>
+          <h1 class="Titulo__calculadora">Calculadora</h1>
+        </header>
+
+        <section class="Input_Group">
+          <input
+            class="Input_Calculadora"
+            id="operator1"
+            [(ngModel)]="operator1"
+            type="number"
+            name="operator1"
+            placeholder="0.0"
+          />
+          <div class="Simbolo_Operacion">{{ Operacion }}</div>
+          <input
+            class="Input_Calculadora"
+            id="operator2"
+            [(ngModel)]="operator2"
+            type="number"
+            name="operator2"
+            placeholder="0.0"
+          />
+
+          <div class="Result">{{ text }}</div>
+        </section>
+
+        <section class="Botones Botones_Group">
+          <button class="potencia-method" (click)="Potencia()">Potencia</button>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
