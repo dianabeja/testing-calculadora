@@ -3,7 +3,7 @@ import { calcularPotencia } from '../potencia/potencia';
 import { radicales } from '../radicales/radicales';
 import { calcularResto } from '../resto/resto';
 import { minimo } from '../minimo/minimo';
-import { min } from 'rxjs';
+import { logaritmo } from '../logaritmo/logaritmo';
 
 @Component({
   selector: 'app-ui',
@@ -52,6 +52,13 @@ export class UiComponent implements OnInit {
     this.result=myresult;
     this.Operacion=" < ";
     this.text= "El numero menor es: "+this.result;
+  }
+  Logaritmo(){
+    let myresult=1;
+    myresult= minimo(this.operator1, this.operator2);
+    this.result=myresult;
+    this.Operacion=" log ";
+    this.text= "El logaritmo es: "+this.result;
   }
 
 }
