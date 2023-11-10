@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff; /* Color de texto blanco */
+  }
+  
+  .contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #716684;
+    border-radius: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .Titulo__calculadora {
+    color: #fff; /* Color de texto blanco */
+  }
+  
+  .Input_Group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .Input_Calculadora {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #716684;
+    border-radius: 2rem;
+  }
+  
+  .Simbolo_Operacion {
+    padding: 10px;
+    font-size: 18px;
+    color: #fff; /* Color de texto blanco */
+  }
+  
+  .Result {
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff; /* Color de texto blanco */
+  }
+  
+  .Botones_Group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .potencia-method {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3f3651;
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    border-radius: 2rem;
+  }
+  
