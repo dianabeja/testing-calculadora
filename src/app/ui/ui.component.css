@@ -95,4 +95,14 @@ body {
     border-radius: 2rem;
     margin-left: 20px;
   }
+  .logaritmo-method {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3f3651;
+    color: #fff; /* Color de texto blanco */
+    border: none;
+    border-radius: 2rem;
+    margin-left: 20px;
+  }
   
