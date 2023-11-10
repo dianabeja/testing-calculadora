@@ -60,12 +60,22 @@ body {
     font-size: 16px;
     cursor: pointer;
     background-color: #3f3651;
-    color: #fff; /* Color de texto blanco */
+    color: #fff; 
+    border: none;
+    border-radius: 2rem;
+  }
+  .radical-method {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3f3651;
+    color: #fff; 
     border: none;
     border-radius: 2rem;
     margin-left: 20px;
   }
-  .radical-method {
+
+  .resto-method {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;

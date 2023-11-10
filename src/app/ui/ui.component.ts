@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { calcularPotencia } from '../potencia/potencia';
 import { radicales } from '../radicales/radicales';
+import { calcularResto } from '../resto/resto';
 
 @Component({
   selector: 'app-ui',
@@ -33,8 +34,15 @@ export class UiComponent implements OnInit {
     let myresult=1;
     myresult= radicales(this.operator1, this.operator2);
     this.result=myresult;
-    this.Operacion="";
+    this.Operacion=" √ ";
     this.text= "El resultado de la raíz es: "+this.result;
+  }
+  Resto(){
+    let myresult=1;
+    myresult= calcularResto(this.operator1, this.operator2);
+    this.result=myresult;
+    this.Operacion=" % ";
+    this.text= "El resto es: "+this.result;
   }
 
 }

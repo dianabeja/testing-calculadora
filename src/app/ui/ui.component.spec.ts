@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { By } from "@angular/platform-browser";
 import { calcularPotencia } from "../potencia/potencia";
 import { radicales } from "../radicales/radicales";
+import { calcularResto } from "../resto/resto";
 
 //Potencia---------------------------------------------
 describe("Ui Addition - Component", () => {
@@ -65,11 +66,6 @@ describe("Ui Addition - Component", () => {
   });
 
 //radicales
-it("Should call maximo method", () => {
-    let result = 0;
-    result = radicales(25, 2);
-    expect(result).toBe(5);
-  });
 
   it("should substract operator1 and operator2 when i click the radical-method ", () => {
     component.operator1 = 25;
@@ -94,4 +90,58 @@ it("Should call maximo method", () => {
     let el: HTMLElement = de.nativeElement;
     expect(el.innerText).toContain("");
   });
+
+  //resto
+
+  describe('calcularResto function', () => {
+    it('debería calcular el resto correctamente', () => {
+      const resultado = calcularResto(5, 2);
+      expect(resultado).toBe(1); 
+    });
+  
+    it('debería setear el modelo operator1 a través de ngModel', async () => {
+      await fixture.whenStable();
+      fixture.detectChanges();
+      const inputElement = fixture.debugElement.query(
+        By.css('input[name="operator1"]')
+      ).nativeElement;
+      inputElement.value = "3.1416";
+      inputElement.dispatchEvent(new Event("input"));
+      fixture.detectChanges();
+      expect(component.operator1).toEqual(3.1416);
+    });
+  
+    it('debería setear el modelo operator2 a través de ngModel', async () => {
+      await fixture.whenStable();
+      fixture.detectChanges();
+      const inputElement = fixture.debugElement.query(
+        By.css('input[name="operator2"]')
+      ).nativeElement;
+      inputElement.value = "2.71";
+      inputElement.dispatchEvent(new Event("input"));
+      fixture.detectChanges();
+      expect(component.operator2).toEqual(2.71);
+    });
+  
+    it('debería calcular el resto cuando se hace clic en el botón calcularResto', () => {
+      component.operator1 = 5;
+      component.operator2 = 2;
+      let calcularRestoButton = fixture.debugElement.query(
+        By.css(".resto-method")
+      );
+      calcularRestoButton.triggerEventHandler("click", null);
+      expect(component.result).toBe(1); 
+    });
+  
+    it('debería renderizar el resto en el div de resultado', () => {
+      component.operator1 = 50;
+      component.operator2 = 5;
+      component.Resto();
+      fixture.detectChanges();
+      let de = fixture.debugElement.query(By.css(".Result"));
+      let el: HTMLElement = de.nativeElement;
+      expect(el.innerText).toContain("0"); 
+    });
+  });
+  
 });
